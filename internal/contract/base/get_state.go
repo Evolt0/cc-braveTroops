@@ -2,25 +2,28 @@ package base
 
 import (
 	"encoding/json"
-	"fmt"
-
+	"github.com/Parker-Yang/def-braveTroops/consts/status"
 	"github.com/Parker-Yang/def-braveTroops/proto"
+	"github.com/Parker-Yang/def-braveTroops/proto/epkg"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
-	"github.com/hyperledger/fabric/protos/peer"
 )
 
-func GetState(stub shim.ChaincodeStubInterface, args []string) peer.Response {
+func GetState(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	if len(args) != 1 {
-		return shim.Error(fmt.Sprintf("failed to get state, incorrect number of arguments: %v", len(args)))
+		return nil, epkg.Wrapf(status.BadRequest, "failed to get State: incorrect number of arguments: %v", len(args))
 	}
 	req := &proto.GetState{}
 	err := json.Unmarshal([]byte(args[0]), req)
 	if err != nil {
-		return shim.Error(fmt.Sprintf("failed to get state, failed to unmarshal request: %v", err))
+		return nil, epkg.Wrapf(status.InternalServerError, "failed to unmarshal request: incorrect number of arguments: %v", err)
 	}
 	state, err := stub.GetState(req.Key)
 	if err != nil {
-		return shim.Error(fmt.Sprintf("failed to get value, failed to call stub.GetState: %v", err))
+		return nil, epkg.Wrapf(status.InternalServerError, "failed to get state: incorrect number of arguments: %v", err)
 	}
-	return shim.Success(state)
+	result, err := epkg.WrapSucc(state)
+	if err != nil {
+		return nil, epkg.Wrapf(status.InternalServerError, "failed to marshal"+err.Error())
+	}
+	return result, nil
 }

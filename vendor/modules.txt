@@ -8,9 +8,14 @@ github.com/Microsoft/go-winio
 github.com/Microsoft/go-winio/pkg/guid
 # github.com/Microsoft/hcsshim v0.8.9
 github.com/Microsoft/hcsshim/osversion
-# github.com/Parker-Yang/def-braveTroops v0.0.0-20201228083706-a87341d81b82
+# github.com/Parker-Yang/def-braveTroops v0.0.0-20210119022744-cb9d2e3b1476
 ## explicit
+github.com/Parker-Yang/def-braveTroops/consts/status
 github.com/Parker-Yang/def-braveTroops/proto
+github.com/Parker-Yang/def-braveTroops/proto/epkg
+github.com/Parker-Yang/def-braveTroops/proto/pkg/RSA
+github.com/Parker-Yang/def-braveTroops/proto/pkg/order
+github.com/Parker-Yang/def-braveTroops/proto/prefix
 # github.com/Shopify/sarama v1.27.2
 ## explicit
 # github.com/containerd/containerd v1.3.4

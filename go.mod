@@ -2,7 +2,7 @@ module github.com/Parker-Yang/cc-braveTroops
 
 require (
 	github.com/Knetic/govaluate v3.0.0+incompatible // indirect
-	github.com/Parker-Yang/def-braveTroops v0.0.0-20201228083706-a87341d81b82
+	github.com/Parker-Yang/def-braveTroops v0.0.0-20210119022744-cb9d2e3b1476
 	github.com/Shopify/sarama v1.27.2 // indirect
 	github.com/fsouza/go-dockerclient v1.6.6 // indirect
 	github.com/golang/protobuf v1.4.3 // indirect
@@ -25,3 +25,5 @@ require (
 )
 
 go 1.15
+
+// replace github.com/Parker-Yang/def-braveTroops => /Users/parker/Desktop/GoWorkspace/BraveTroops/def-braveTroops

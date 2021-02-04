@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/Parker-Yang/def-braveTroops/proto"
+	"github.com/Evolt0/def-braveTroops/proto"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	"github.com/hyperledger/fabric/protos/peer"
 )

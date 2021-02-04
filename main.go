@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/Parker-Yang/cc-braveTroops/internal/contract"
+	"github.com/Evolt0/cc-braveTroops/internal/contract"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
 

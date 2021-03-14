@@ -8,8 +8,12 @@ type Amounts struct {
 	ObjectType string `json:"objectType"`
 	// 发起人Sender
 	SID string `json:"sID"`
-	// 收款人receiver
+	// senderName
+	SName string `json:"sName"`
+	// 收款人receiverID
 	RID string `json:"rID"`
+	// receiverName
+	RName string `json:"rName"`
 	// 金额
 	Change float64 `json:"change"`
 	// 产生时间

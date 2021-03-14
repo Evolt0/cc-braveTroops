@@ -52,7 +52,7 @@ func execTransfer(stub shim.ChaincodeStubInterface, user, receiver *proto.User, 
 	if err != nil {
 		return err
 	}
-	amounts := newAmounts(stub, req)
+	amounts := newAmounts(stub, user, receiver, req)
 	amountsKey, err := pkg.NewCompositeKey(stub, prefix.Amounts, amounts.ID)
 	if err != nil {
 		return err

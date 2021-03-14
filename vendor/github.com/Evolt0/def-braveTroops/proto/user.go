@@ -4,6 +4,8 @@ package proto
 type User struct {
 	// 用户id（根据用户公钥Hash获得）
 	ID string `json:"id"`
+	// 用户名
+	Name string `json:"name"`
 	//对象类型定义
 	ObjectType string `json:"objectType"`
 	// 用户公钥
@@ -17,6 +19,8 @@ type User struct {
 type UserReq struct {
 	// 用户id（根据用户公钥Hash获得）
 	ID string `json:"id" binding:"required"`
+	// 用户名
+	Name string `json:"name" binding:"required"`
 	// 用户公钥
 	PubKey string `json:"pubKey" binding:"required"`
 }

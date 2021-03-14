@@ -10,6 +10,7 @@ import (
 func newUser(stub shim.ChaincodeStubInterface, req *proto.UserReq) *proto.User {
 	return &proto.User{
 		ID:         req.ID,
+		Name:       req.Name,
 		ObjectType: prefix.User,
 		PubKey:     req.PubKey,
 		Balance:    0,

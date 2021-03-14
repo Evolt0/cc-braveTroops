@@ -7,6 +7,8 @@ type Mining struct {
 	ObjectType string `json:"objectType"`
 	// 用户id
 	UID string `json:"uID"`
+	// 用户名
+	UName string `json:"uName"`
 	// 计算结果hash
 	ResultHash string `json:"resultHash"`
 	// 计算结果

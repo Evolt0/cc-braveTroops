@@ -1,7 +1,7 @@
 module github.com/Evolt0/cc-braveTroops
 
 require (
-	github.com/Evolt0/def-braveTroops v0.0.2-0.20210204055109-27b403d6ab4a
+	github.com/Evolt0/def-braveTroops v0.0.2-0.20210225061907-29fde81a3c02
 	github.com/Knetic/govaluate v3.0.0+incompatible // indirect
 	github.com/Shopify/sarama v1.27.2 // indirect
 	github.com/fsouza/go-dockerclient v1.6.6 // indirect

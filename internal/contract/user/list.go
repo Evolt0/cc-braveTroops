@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/Evolt0/cc-braveTroops/pkg"
 	"github.com/Evolt0/def-braveTroops/consts/status"
 	"github.com/Evolt0/def-braveTroops/proto"
 	"github.com/Evolt0/def-braveTroops/proto/epkg"
@@ -13,12 +12,7 @@ import (
 )
 
 func List(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
-	data := &proto.BodyData{}
-	err := pkg.Decode(args, data)
-	if err != nil {
-		return nil, err
-	}
-	list, err := execList(stub, data)
+	list, err := execList(stub)
 	if err != nil {
 		return nil, err
 	}
@@ -29,7 +23,7 @@ func List(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	return marshal, nil
 }
 
-func execList(stub shim.ChaincodeStubInterface, data *proto.BodyData) (*proto.ListUser, error) {
+func execList(stub shim.ChaincodeStubInterface) (*proto.ListUser, error) {
 	queryString := fmt.Sprintf("{\"selector\":{\"objectType\":\"%s\"}}", prefix.User)
 	list := &proto.ListUser{}
 	list.List = make([]proto.User, 0)

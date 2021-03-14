@@ -4,6 +4,7 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
+	"strconv"
 	"time"
 
 	"github.com/Evolt0/def-braveTroops/consts/status"
@@ -167,7 +168,7 @@ func InitTarget(stub shim.ChaincodeStubInterface) error {
 		return err
 	}
 	target := &proto.Target{
-		Prefix:       prefix.BraveTroops,
+		Prefix:       prefix.BraveTroops + strconv.FormatInt(GetTimestamp(stub), 10),
 		NumZero:      1 << 2,
 		LastUpdateAt: GetTimestamp(stub),
 	}

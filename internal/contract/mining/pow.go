@@ -54,6 +54,12 @@ func execPoW(stub shim.ChaincodeStubInterface, user *proto.User, req *proto.Mini
 	if err != nil {
 		return nil, err
 	}
+	amounts := newAmounts(stub, user, req)
+	amountsKey, err := pkg.NewCompositeKey(stub, prefix.Amounts, amounts.ID)
+	if err != nil {
+		return nil, err
+	}
+	_, err = pkg.PutState(stub, amountsKey, amounts)
 	return result, nil
 }
 

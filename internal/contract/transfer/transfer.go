@@ -31,6 +31,9 @@ func Transfer(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 }
 
 func execTransfer(stub shim.ChaincodeStubInterface, user, receiver *proto.User, req *proto.AmountsReq) error {
+	if user.ID == receiver.ID{
+		return epkg.Wrapf(status.Conflict, "can not transfer to yourself")
+	}
 	if user.Balance < req.Change {
 		return epkg.Wrapf(status.Conflict, "balance not enough")
 	}

@@ -1,7 +1,7 @@
 # github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78
 github.com/Azure/go-ansiterm
 github.com/Azure/go-ansiterm/winterm
-# github.com/Evolt0/def-braveTroops v0.0.2-0.20210225061907-29fde81a3c02
+# github.com/Evolt0/def-braveTroops v0.0.2-0.20210329015424-e57f46883cf6
 ## explicit
 github.com/Evolt0/def-braveTroops/consts/status
 github.com/Evolt0/def-braveTroops/proto

@@ -20,3 +20,16 @@ func newMining(stub shim.ChaincodeStubInterface, user *proto.User, data *proto.T
 		TargetNumZero: data.NumZero,
 	}
 }
+
+func newAmounts(stub shim.ChaincodeStubInterface, user *proto.User, req *proto.MiningReq) *proto.Amounts {
+	return &proto.Amounts{
+		ID:         pkg.NewUUID(stub, prefix.Amounts),
+		ObjectType: prefix.Amounts,
+		SID:        req.ID,
+		SName:      user.Name,
+		RID:        req.ID,
+		RName:      user.Name,
+		Change:     50,
+		CreateAt:   req.Timestamp,
+	}
+}

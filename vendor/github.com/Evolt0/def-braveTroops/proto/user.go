@@ -28,3 +28,8 @@ type UserReq struct {
 type ListUser struct {
 	List []User `json:"list"`
 }
+
+type KeyPair struct {
+	Pub string `json:"pub"`
+	Pri string `json:"pri"`
+}
